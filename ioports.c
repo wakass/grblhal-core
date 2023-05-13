@@ -122,10 +122,10 @@ bool ioport_claim (io_port_type_t type, io_port_direction_t dir, uint8_t *port, 
         } while(n_ports && !ok);
 
     } else if((ok = n_ports > 0)) {
-
+        //We can't claim the ports through the claim interface
         if(type == Port_Digital)
             *port = dir == Port_Input ? --hal.port.num_digital_in : --hal.port.num_digital_out;
-        else
+        else //Analog
             *port = dir == Port_Input ? --hal.port.num_analog_in : --hal.port.num_analog_out;
 
         if(hal.port.set_pin_description)

@@ -2995,7 +2995,6 @@ status_code_t gc_execute_block (char *block)
 
     // [9a. User defined M commands ]:
     if(gc_block.user_mcode && !check_mode) {
-
         if(gc_block.user_mcode_sync)
             protocol_buffer_synchronize(); // Ensure user defined mcode is executed when specified in program.
         gc_block.words.mask = user_words.mask;
