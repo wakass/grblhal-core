@@ -411,24 +411,24 @@ typedef enum {
 #endif
 #define PINMODE_PULLUP   (PullMode_Up<<3)
 #define PINMODE_PULLDOWN (PullMode_Down<<3)
-#define PINMODE_PWM      (1U<<10)
+#define PINMODE_PWM    (1U<<10)
 #define PINMODE_ANALOG   (1U<<11)
 #define PINMODE_REMAP    (1U<<14)
 
 typedef union {
     uint16_t mask;
-    struct {
+    struct {                    //Bit positions (shift-values)
         uint16_t input      :1,
-                 output     :1,
+                 output     :1, //1
                  open_drain :1,
-                 pull_mode  :2,
-                 irq_mode   :5,
-                 pwm        :1,
-                 analog     :1,
-                 peripheral :1,
-                 claimed    :1,
-                 remapped   :1,
-                 can_remap  :1;
+                 pull_mode  :2, //3
+                 irq_mode   :5, //5
+                 pwm        :1, //10
+                 analog     :1, //11
+                 peripheral :1, //12
+                 claimed    :1, //13
+                 remapped   :1, //14
+                 can_remap  :1; //15
     };
 } pin_mode_t;
 

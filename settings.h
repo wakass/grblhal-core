@@ -244,7 +244,7 @@ typedef enum {
     Settings_IoPort_InvertIn  = 370,
     Settings_IoPort_Pullup_Disable = 371,
     Settings_IoPort_InvertOut = 372,
-    Settings_IoPort_Invert_AnalogOut = 373,
+    Settings_IoPort_OD_Enable = 373,
     Settings_ModBus_BaudRate = 374,
     Settings_ModBus_RXTimeout = 375,
     Settings_Axis_Rotational = 376,
@@ -357,6 +357,14 @@ typedef enum {
     Setting_MQTTBrokerUserName  = 532,
     Setting_MQTTBrokerPassword  = 533,
 
+    // Block reserved for analog ioport outputs (PWM and DAC)
+    Settings_IoPort_Invert_AnalogOut = 540,
+    Settings_IoPort_Analog_Reserved1 = 541,
+    Settings_IoPort_Analog_Reserved9 = 549,
+    // Block reserved for PWM settings, related to ioports
+    Settings_PWM_Reserved0 = 550,
+    Settings_PWM_Reserved9 = 559,
+    
     Setting_SettingsMax,
     Setting_SettingsAll = Setting_SettingsMax,
 
